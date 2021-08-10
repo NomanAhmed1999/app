@@ -1,0 +1,32 @@
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+h1{
+    margin: 3% 0% 0% 0%;
+    text-align: center;
+}
+.dp{
+    margin: 2% 30vw;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+.input-img-dp{
+    display: none;
+}
+
+
+.form-div{
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border: 4px solid rgb(139, 174, 219);
+    width: 80%;
+    margin: 3% 0% 0% 10%;
+    padding: 2% 2% 2% 7%;
+}
