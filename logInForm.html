@@ -55,19 +55,9 @@
 
 <body>
 
-    <h1>Create Account</h1>
+    <h1>Account Login</h1>
     <form class="form-div">
 
-        <label>
-            <div class="form-floating mb-3">
-                <img class="dp" id="unknown-profile-pic" type="file" src="./images/known-dp.png" alt="">
-                <input id="profile-pic-input" onchange="dpChange()" class="input-img-dp" type="file">
-            </div>
-        </label>
-
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="namee" placeholder="Enter Your Name">
-            <label>Name</label>
         </div>
 
         <div class="form-floating mb-3">
@@ -75,47 +65,17 @@
             <label>Email address</label>
         </div>
 
-        <div class="form-floating mb-3">
-            <input type="number" class="form-control" id="phoneNumber" placeholder="Phone number">
-            <label>phone number</label>
-        </div>
-        <div class="row">
-            <div class="col mb-3">
-                <input type="text" class="form-control" id="countryName" placeholder="Country" aria-label="Country">
-            </div>
-            <div class="col mb-3">
-                <input type="text" class="form-control" id="city" placeholder="City" aria-label="city">
-            </div>
-        </div> 
-       
-        
-        <h5>Your Role : </h5>
-        <label>
-        <div class="form-check">
-            <input class="form-check-input" value="customer" type="radio" name="UserRole" id="RadioCustome">
-              Customer
-            </label>
-          </div>
-          <label class="form-check-label">
-          <div class="form-check">
-            <input class="form-check-input" value="employer" type="radio" name="UserRole" id="RadioEmployer" checked>
-              Employer
-            </label>
-          </div>
-
           
           <div class="form-floating mb-3">
               <input type="password" class="form-control" id="passwordd" placeholder="Password">
               <label>Password</label>
             </div>
             
-            <div class="form-floating mb-3">
-              <input type="password" class="form-control" id="reTypePassword" placeholder="Re-Type Password">
-              <label>Re-Type Password</label>
-          </div>
 
-        <button type="button" id="submitBtn" onclick="register()" class="btn btn-outline-primary">Register</button>
-        <button type="button" id="submitBtn" onclick="logInPage()" class="btn btn-outline-primary">LOGIN</button>
+        <button type="button" id="submitBtn" onclick="signinUser()" class="btn btn-outline-primary btn-align">Log in</button>
+        <button type="button" id="submitBtn" onclick="createNewAccount()" class="btn btn-outline-primary btn-align">Create new account</button>
+ 
+        <p onclick="forgatePass()" class="forgate-pass">Forgate Password</p>
     </form>
 
 

@@ -1,5 +1,4 @@
 
-
 // ************* Initialize ******************
 
 let unknownProfilePic = document.getElementById("unknown-profile-pic");
@@ -15,6 +14,7 @@ let role = document.getElementsByName("UserRole");
 
 let db = firebase.firestore();
 let storage = firebase.storage();
+let auth = firebase.auth();
 
 
 
@@ -38,6 +38,7 @@ let register = async () => {
         uid : UID,
         userProfile : imgURL,
     }
+    window.location = "./home.html";
 
     db.collection("users").doc(UID).set(userInfoObj)
     console.log(userInfoObj);
@@ -73,6 +74,54 @@ let uploadImageToStorage = (UID) => {
     } )
 
     
+}  
+auth.onAuthStateChanged((user) => {
+    let pageLocArr = window.location.href.split('/');
+    let pageName = pageLocArr[pageLocArr.length - 1];
+    let authenticatedPages = ['home.html', 'findwork.html', 'myjob.html'];
+
+    // if (user && authenticatedPages.indexOf(pageName) === -1) {
+    //     window.location = './findwork.html';
+    // }
+    // else if (!user && pageName === 'home.html') {
+    //     window.location = './index.html';
+    // }
+});
+
+async function signout() {
+    await auth.signOut();
 }
 
 
+
+async function signinUser() {
+    await auth.signInWithEmailAndPassword(emaill.value, passwordd.value);
+    window.location = "./home.html";
+}
+
+
+
+
+
+
+
+let createNewAccount = () => {
+    window.location = "./index.html"
+}
+
+let forgatePass = () => {
+    firebase.auth().sendPasswordResetEmail(emaill)
+  .then(() => {
+    // Password reset email sent!
+    // ..
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ..
+  });
+}
+
+let logInPage = () => {
+window.location = "loginForm.html"
+}
